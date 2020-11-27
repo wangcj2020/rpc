@@ -17,5 +17,85 @@
         <module>rpc-client</module>
     </modules>
 
+    <properties>
+        <common-version>2.5</common-version>
+        <jetty-version>9.4.6.v20170531</jetty-version>
+        <json-version>1.2.36</json-version>
 
+        <junit-version>4.12</junit-version>
+        <lombok-version>1.16.18</lombok-version>
+        <slf4j-version>1.7.25</slf4j-version>
+        <logback-version>1.2.3</logback-version>
+
+        <compiler-version>3.2</compiler-version>
+        <jdk-version>1.8</jdk-version>
+    </properties>
+
+    <dependencyManagement>
+        <!-- 子模块可能用到的依赖 -->
+        <dependencies>
+            <dependency>
+                <groupId>commons-io</groupId>
+                <artifactId>commons-io</artifactId>
+                <version>${common-version}</version>
+            </dependency>
+
+            <!-- Servlet容器Jetty -->
+            <dependency>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-servlet</artifactId>
+                <version>${jetty-version}</version>
+            </dependency>
+
+            <!-- 序列化 -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${json-version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+        <!-- 公共依赖 -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit-version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok-version}</version>
+        </dependency>
+
+        <!-- 日志 -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>${logback-version}</version>
+        </dependency>
+    </dependencies>
+
+    <!-- 编译配置 -->
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${compiler-version}</version>
+                <configuration>
+                    <source>${jdk-version}</source>
+                    <target>${jdk-version}</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
