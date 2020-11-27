@@ -1,6 +1,5 @@
 package com.cj.common.utils;
 
-import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 import java.util.ArrayList;
@@ -12,8 +11,8 @@ import java.util.List;
 public class ReflectionUtils {
 
     /**
-     * 根据全类名创建对象
-     * @param clazz 要创建对象的全类名
+     * 根据类对象创建对象
+     * @param clazz 要创建对象的类对象
      * @param <T> 要创建对象的类型
      * @return 创建好的对象
      */
@@ -26,8 +25,8 @@ public class ReflectionUtils {
     }
 
     /**
-     * 根据全类名获取该类中的public方法(不包含父类)
-     * @param clazz 全类名
+     * 根据类对象获取该类中的public方法(不包含父类)
+     * @param clazz 类对象
      * @return 指定类所有public方法
      */
     public static Method[] getAllPublicMethods(Class clazz){

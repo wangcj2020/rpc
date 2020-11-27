@@ -11,5 +11,11 @@
 
     <artifactId>rpc-codec</artifactId>
 
-
+    <dependencies>
+        <!-- 序列化 -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+        </dependency>
+    </dependencies>
 </project>
