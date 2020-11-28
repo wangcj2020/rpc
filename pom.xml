@@ -15,19 +15,20 @@
         <module>rpc-transport</module>
         <module>rpc-server</module>
         <module>rpc-client</module>
+        <module>rpc-example</module>
     </modules>
 
     <properties>
         <common-version>2.5</common-version>
-        <jetty-version>9.4.6.v20170531</jetty-version>
-        <json-version>1.2.36</json-version>
+        <jetty-version>9.4.19.v20190610</jetty-version>
+        <json-version>1.2.44</json-version>
 
         <junit-version>4.12</junit-version>
-        <lombok-version>1.16.18</lombok-version>
-        <slf4j-version>1.7.25</slf4j-version>
+        <lombok-version>1.18.8</lombok-version>
+        <slf4j-version>1.7.26</slf4j-version>
         <logback-version>1.2.3</logback-version>
 
-        <compiler-version>3.2</compiler-version>
+        <compiler-version>3.3</compiler-version>
         <jdk-version>1.8</jdk-version>
     </properties>
 

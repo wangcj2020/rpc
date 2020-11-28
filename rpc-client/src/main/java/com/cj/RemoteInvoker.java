@@ -62,13 +62,24 @@ public class RemoteInvoker implements InvocationHandler {
             // 2.1、将请求信息发送到服务端,并等待响应数据(流)
             InputStream stream = client.sent(new ByteArrayInputStream(outBytes));
             byte[] inBytes = IOUtils.readFully(stream, stream.available());
+            // 输出inBytes
+//            int count = 0;
+//            for (byte b:inBytes){
+//                System.out.print(b);
+//                System.out.print(',');
+//                count++;
+//                if(count >= 20){
+//                    System.out.println();
+//                    count=0;
+//                }
+//            }
             // 2.2、解码：反序列化
-            response = decoder.decode(inBytes,Response.class);
+            response = decoder.decode(inBytes,Response.class); // 抛出异常
         }catch (IOException e) {
             log.warn(e.getMessage(),e);
             response = new Response();
             response.setCode(1);
-            response.setMessage("RpcServer has a error:" + e.getClass().getName() + ":" + e.getMessage());
+            response.setMessage("RpcClient has a error:" + e.getClass().getName() + ":" + e.getMessage());
         }finally {
             if(client != null){
                 selector.release(client);

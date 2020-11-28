@@ -15,13 +15,14 @@ public class HttpTransportClient implements TransportClient {
     @Override
     public void connect(Peer peer) {
         this.url = "http://" + peer.getHost() + ":" + peer.getPort();
+        System.out.println(url);
     }
 
     @Override
     public InputStream sent(InputStream data) {
         try {
             // 获取连接
-            HttpURLConnection httpConn = (HttpURLConnection) new URL(this.url).openConnection();
+            HttpURLConnection httpConn = (HttpURLConnection) new URL(url).openConnection();
             // 设置连接
             httpConn.setDoInput(true);
             httpConn.setDoOutput(true);

@@ -21,12 +21,11 @@ public class ServiceDescriptor {
 
     @Override
     public String toString() {
-        return "ServiceDescriptor{" +
-                "clazz='" + clazz + '\'' +
-                ", method='" + method + '\'' +
-                ", returnType='" + returnType + '\'' +
-                ", parameterTypes=" + Arrays.toString(parameterTypes) +
-                '}';
+        return "clazz=" + clazz +
+                ",method=" + method +
+                ",returnType=" + returnType +
+                ",parameterTypes=" + Arrays.toString(parameterTypes);
+//          return "{\"clazz\":\"" + clazz + "\", \"method\":\"" + method + "\", \"returnType\":\"" + returnType + "\", \"parameterTypes\"" + Arrays.toString(parameterTypes) + "\"}";
     }
 
     /**

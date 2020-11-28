@@ -32,6 +32,7 @@ public class ServiceManager {
         for(Method method:methods){
             // 获取ServiceDescriptor对象
             ServiceDescriptor serviceDescriptor = ServiceDescriptor.from(interfaceClass, method);
+            // System.out.println(serviceDescriptor);
             // 生成ServiceInstance对象
             ServiceInstance serviceInstance = new ServiceInstance(bean, method);
             // 注册服务
