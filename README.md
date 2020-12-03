@@ -1,10 +1,6 @@
 # rpc
 Init project
 
-## 类图
-
-![类图](resource/类图.png)
-
 ## 说明
 
 [参考链接](https://www.imooc.com/video/20219)
@@ -15,29 +11,28 @@ Init project
 
 >*交互形式：*
 >
-><img src="I:\Typora\Java实战笔记\images\image-20201112180325187.png" alt="image-20201112180325187" style="zoom:67%;" />
+>![图解交互形式](resource/图解交互形式.png)
 >
 >*现有框架对比：*‘
 >
-><img src="I:\Typora\Java实战笔记\images\image-20201112180416000.png" alt="image-20201112180416000" style="zoom:67%;" />
+>![现有框架对比](resource/现有框架对比.png)
 >
 >*核心原理：*
 >
-><img src="I:\Typora\Java实战笔记\images\image-20201112180734017.png" alt="image-20201112180734017" style="zoom:67%;" />
->
+>![核心原理](resource/核心原理.png)
 >
 
 ### 3.1实现
 
 #### 3.1.1 类图
 
-><img src="I:\Typora\Java实战笔记\images\类图.png" style="zoom:67%;" />
+>![类图](resource/类图.png)
 
 #### 3.1.2 创建工程
 
 >*工程结构*
 >
->![image-20201127192056665](I:\Typora\Java实战笔记\images\image-20201127192056665.png)
+>![工程结构](resource/工程结构.png)
 >
 >>`pom.xml`添加依赖
 >>
