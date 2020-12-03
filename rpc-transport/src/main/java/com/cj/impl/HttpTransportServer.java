@@ -28,6 +28,7 @@ public class HttpTransportServer implements TransportServer {
         // Servlet接收请求
         ServletContextHandler ctx = new ServletContextHandler();
         server.setHandler(ctx);
+        // 托管Servlet
         ServletHolder servletHolder = new ServletHolder(new RequestServlet());
         ctx.addServlet(servletHolder, "/*");
     }

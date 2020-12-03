@@ -15,10 +15,10 @@ public class RandomTransportSelector implements TransportSelector {
     /**
      * 已经连接好的client
      */
-    private List<TransportClient> hasConnClient;
+    private List<TransportClient> hasConn;
 
     public RandomTransportSelector(){
-        hasConnClient = new ArrayList<>();
+        hasConn = new ArrayList<>();
     }
 
     @Override
@@ -30,7 +30,7 @@ public class RandomTransportSelector implements TransportSelector {
             for (int i = 0; i < count; i++) {
                 TransportClient client = ReflectionUtils.newInstance(clazz);
                 client.connect(peer);
-                hasConnClient.add(client);
+                hasConn.add(client);
             }
             log.info("connect server: {}",peer);
         }
@@ -38,20 +38,20 @@ public class RandomTransportSelector implements TransportSelector {
 
     @Override
     public synchronized TransportClient select() {
-        int i = new Random().nextInt(hasConnClient.size());
-        return hasConnClient.remove(i);
+        int i = new Random().nextInt(hasConn.size());
+        return hasConn.remove(i);
     }
 
     @Override
     public synchronized void release(TransportClient client) {
-        hasConnClient.add(client);
+        hasConn.add(client);
     }
 
     @Override
     public synchronized void close() {
-        for (TransportClient client:hasConnClient){
+        for (TransportClient client:hasConn){
             client.close();
         }
-        hasConnClient.clear();
+        hasConn.clear();
     }
 }

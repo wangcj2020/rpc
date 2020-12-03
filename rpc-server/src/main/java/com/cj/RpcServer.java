@@ -19,7 +19,7 @@ public class RpcServer {
     private RpcServerConfig config;
     // 网络传输
     private TransportServer net;
-    // 序列化与反序列haul
+    // 序列化与反序列化
     private Encoder encoder;
     private Decoder decoder;
     // 服务管理与服务调用
